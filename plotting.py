@@ -7,8 +7,8 @@ def plotM(*args,**kwargs):
     f, axs = plt.subplots(1,len(args), figsize=(6*len(args), 6), dpi=100)
     if len(args)>1:
         for i in range(len(args)):
-            if t:   c= axs[i].imshow(tf.transpose(args[i]))
-            else:   c= axs[i].imshow(args[i])
+            if t:   c= axs[i].imshow(tf.transpose(args[i]),**kwargs)
+            else:   c= axs[i].imshow(args[i],**kwargs)
             plt.colorbar(c, ax=axs[i])
     else:
         if t:  c= axs.imshow(tf.transpose(args[0]), **kwargs)
